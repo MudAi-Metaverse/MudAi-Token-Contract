@@ -1,4 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
+import 'solidity-coverage';
+import "hardhat-gas-reporter";
 import "@nomicfoundation/hardhat-toolbox";
 
 const config: HardhatUserConfig = {
@@ -14,12 +16,17 @@ const config: HardhatUserConfig = {
   networks: {
     goerli: {
       url: `https://eth-goerli.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
-      accounts: [process.env.GOERLI_PRIVATE_KEY!]
+      accounts: [process.env.GOERLI_PRIVATE_KEY as string]
     }
   },
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_TOKEN
+  gasReporter: {
+    enabled: true,
+    currency: 'JPY',
+    gasPrice: 14
   },
+  // etherscan: {
+  //   apiKey: process.env.ETHERSCAN_API_TOKEN
+  // },
 };
 
 export default config;
