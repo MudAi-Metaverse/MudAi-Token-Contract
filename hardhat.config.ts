@@ -14,9 +14,13 @@ const config: HardhatUserConfig = {
     }
   }, 
   networks: {
+    mainnet: {
+      url: process.env.ETH_MAINNET_RPC_URL,
+      accounts: [process.env.MAINNET_WALLET_ADDRESS_PRIVATE_KEYY as string]
+    },
     goerli: {
       url: `https://eth-goerli.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
-      accounts: [process.env.GOERLI_PRIVATE_KEY as string]
+      accounts: [process.env.GOERLI_WALLET_ADDRESS_PRIVATE_KEYY as string]
     }
   },
   gasReporter: {
@@ -24,9 +28,9 @@ const config: HardhatUserConfig = {
     currency: 'JPY',
     gasPrice: 14
   },
-  // etherscan: {
-  //   apiKey: process.env.ETHERSCAN_API_TOKEN
-  // },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_TOKEN
+  },
 };
 
 export default config;
