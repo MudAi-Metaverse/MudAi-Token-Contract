@@ -1,8 +1,7 @@
-# Sample Hardhat Project
+# MudAi token contract
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
+Here is the repository for the ERC20 MudAi token ($MUDAI) contract. The contract has been deployed on the Ethereum mainnet.
+Contract address: `0x894f1CB077f50a549D4D3425Fe0a583C03B7ffeC`
 
 ```shell
 npx hardhat help
